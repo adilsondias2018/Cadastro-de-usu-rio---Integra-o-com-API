@@ -2,11 +2,9 @@ import "./App.css";
 
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
-import { TextField, Button } from "@material-ui/core/";
+import Login from "./components/Login";
+import UserForm from "./components/Form";
+import RestrictArea from "./components/RestrictArea";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(undefined);
