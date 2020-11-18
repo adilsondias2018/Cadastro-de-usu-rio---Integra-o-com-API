@@ -1,12 +1,14 @@
-import "./App.css";
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { TextField, Button } from "@material-ui/core/";
 
-function App() {
+const UserForm = () => {
+  const schema = yup.object().shape({
+    user: yup.string().min(6, ""),
+  });
+
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
@@ -27,6 +29,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
-export default App;
+export default UserForm;
