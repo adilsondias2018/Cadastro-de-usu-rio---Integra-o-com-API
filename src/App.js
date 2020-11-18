@@ -3,7 +3,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
-import UserForm from "./components/Form";
+import UserForm from "./components/user-form";
 import RestrictArea from "./components/RestrictArea";
 
 function App() {
