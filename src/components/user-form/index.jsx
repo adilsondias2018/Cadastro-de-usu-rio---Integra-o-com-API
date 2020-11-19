@@ -14,7 +14,17 @@ const UserForm = () => {
       .string()
       .min(6, "Mínimo de 6 caracteres")
       .required("Campo obrigatório."),
-    name: yup.string().required("Campo obrigatório."),
+    name: yup
+      .string()
+      .required("Campo obrigatório.")
+      .matches(
+        /^[a-z A-Z]+$/,
+        "Não são aceitos caracteres especiais e números."
+      )
+      .matches(
+        /[A-Z][a-z]* [A-Z][a-z]*/,
+        "É necessário pelo menos nome e sobrenome e que as iniciais estejam em maiúsculo."
+      ),
     email: yup
       .string()
       .email("Insira um email válido.")
