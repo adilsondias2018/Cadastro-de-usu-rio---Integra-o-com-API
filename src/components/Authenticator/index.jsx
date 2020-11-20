@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
-import Login from "./components/Login";
-import UserForm from "./components/user-form";
-import RestrictArea from "./components/RestrictArea";
+import Login from "../Login";
+import UserForm from "../user-form";
+import RestrictArea from "../RestrictArea";
 import Axios from "axios";
 
 const Authenticator = () => {
@@ -42,11 +42,14 @@ const Authenticator = () => {
 
   return (
     <Switch>
-      <Route path="/">
-        <Login setAuthentication={setAuthentication}></Login>
-      </Route>
       <Route exact path="/area-restrita">
         <RestrictArea />
+      </Route>
+      <Route exact path="/user-form">
+        <UserForm />
+      </Route>
+      <Route path="/">
+        <Login setAuthentication={setAuthentication}></Login>
       </Route>
     </Switch>
   );

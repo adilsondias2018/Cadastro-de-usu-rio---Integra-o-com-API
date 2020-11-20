@@ -1,18 +1,19 @@
 import "./App.css";
 
-import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-import Login from "./components/Login";
-import UserForm from "./components/user-form";
-import RestrictArea from "./components/RestrictArea";
+// import React, { useState, useEffect } from "react";
+// import { Switch, Route } from "react-router-dom";
+// import Login from "./components/Login";
+// // import UserForm from "./components/user-form";
+// import RestrictArea from "./components/RestrictArea";
+import Authenticator from "./components/Authenticator";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(undefined);
+  // const [authenticated, setAuthenticated] = useState(undefined);
 
   return (
     <div className="App">
       <header className="App-header">
-        <Switch>
+        {/* <Switch>
           <Route exact path="/">
             <Login />
           </Route>
@@ -22,7 +23,9 @@ function App() {
           <Route exact path="/area-restrita">
             <RestrictArea />
           </Route>
-        </Switch>
+        </Switch> */}
+
+        <Authenticator />
       </header>
     </div>
   );

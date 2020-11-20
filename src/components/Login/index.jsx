@@ -6,7 +6,7 @@ import axios from "axios";
 
 import { TextField, Button } from "@material-ui/core/";
 
-const Login = () => {
+const Login = (props) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
@@ -37,6 +37,7 @@ const Login = () => {
       .then((response) => {
         console.log(response);
         window.localStorage.setItem("authToken", response.data.auth_tokenn);
+        props.setAuthentication(true);
 
         history.push("/area-restrita");
       })
