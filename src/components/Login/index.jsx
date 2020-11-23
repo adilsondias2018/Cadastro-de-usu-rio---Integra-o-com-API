@@ -36,7 +36,7 @@ const Login = (props) => {
       .post("https://ka-users-api.herokuapp.com/authenticate", { ...data })
       .then((response) => {
         console.log(response);
-        window.localStorage.setItem("authToken", response.data.auth_tokenn);
+        window.localStorage.setItem("authToken", response.data.auth_token);
         props.setAuthentication(true);
 
         history.push("/area-restrita");
