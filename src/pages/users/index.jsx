@@ -18,7 +18,7 @@ const Users = () => {
       .then((response) => setUsers(response.data));
   };
 
-  useEffect(getUsers, []);
+  useEffect(getUsers);
 
   console.log(rows);
 

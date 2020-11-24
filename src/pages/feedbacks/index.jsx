@@ -24,7 +24,7 @@ const Feedbacks = () => {
       .then((response) => setFeedbacks(response.data));
   };
 
-  useEffect(getFeedbacks, []);
+  useEffect(getFeedbacks);
 
   console.log(rows);
 
