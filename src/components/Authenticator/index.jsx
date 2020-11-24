@@ -4,6 +4,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import Login from "../Login";
 import Users from "../../pages/users";
 import Feedbacks from "../../pages/feedbacks";
+import NewFeedback from "../../pages/newfeedback";
 import UserForm from "../user-form";
 import RestrictArea from "../RestrictArea";
 import Axios from "axios";
@@ -55,6 +56,9 @@ const Authenticator = () => {
       </Route>
       <Route exact path="/feedbacks">
         <Feedbacks />
+      </Route>
+      <Route exact path="/newfeedback">
+        <NewFeedback />
       </Route>
       <Route path="/">
         <Login setAuthentication={setAuthentication}></Login>

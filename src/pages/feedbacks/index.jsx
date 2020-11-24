@@ -3,22 +3,28 @@ import { DataGrid } from "@material-ui/data-grid";
 import axios from "axios";
 const Feedbacks = () => {
   const token = window.localStorage.getItem("authToken");
+  const userID = window.localStorage.getItem("user_id");
 
-  const [users, setUsers] = useState([]);
+  const [feedbacks, setFeedbacks] = useState([]);
 
-  const rows = users.map((usr) => {
-    return { id: usr.id, user: usr.user, name: usr.name, email: usr.email };
+  const rows = feedbacks.map((feedback) => {
+    return {
+      id: feedback.id,
+      name: feedback.name,
+      comment: feedback.comment,
+      grade: feedback.grade,
+    };
   });
 
-  const getUsers = () => {
+  const getFeedbacks = () => {
     axios
-      .get("https://ka-users-api.herokuapp.com/users", {
+      .get(`https://ka-users-api.herokuapp.com/users/${userID}/feedbacks`, {
         headers: { Authorization: token },
       })
-      .then((response) => setUsers(response.data));
+      .then((response) => setFeedbacks(response.data));
   };
 
-  useEffect(getUsers, []);
+  useEffect(getFeedbacks, []);
 
   console.log(rows);
 
@@ -28,9 +34,9 @@ const Feedbacks = () => {
         rows={rows}
         columns={[
           { field: "id" },
-          { field: "user", flex: 1 },
           { field: "name", flex: 1 },
-          { field: "email", flex: 1 },
+          { field: "comment", flex: 1 },
+          { field: "grade", flex: 1 },
         ]}
         pageSize={10}
       />

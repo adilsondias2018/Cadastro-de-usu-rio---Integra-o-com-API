@@ -31,7 +31,7 @@ const RestrictArea = () => {
             value={2}
             label="Create new feedback"
             onClick={() => {
-              history.push("/newFeedback");
+              history.push("/newfeedback");
             }}
           />
         </Tabs>

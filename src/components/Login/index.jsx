@@ -36,6 +36,7 @@ const Login = (props) => {
       .then((response) => {
         console.log(response);
         window.localStorage.setItem("authToken", response.data.auth_token);
+        window.localStorage.setItem("user_id", response.data.user.id);
         props.setAuthentication(true);
 
         history.push("/area-restrita");
