@@ -57,78 +57,88 @@ const UserForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleForm)}>
-      <div>
-        <TextField
-          autoFocus
-          size="small"
-          id="outlined-required"
-          label="Usuário: "
-          name="user"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.user}
-          helperText={errors.user?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Nome Completo: "
-          name="name"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.name}
-          helperText={errors.name?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Email: "
-          name="email"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.email}
-          helperText={errors.email?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Senha: "
-          name="password"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.password}
-          helperText={errors.password?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Confirmar Senha: "
-          name="password_confirmation"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.password_confirmation}
-          helperText={errors.password_confirmation?.message}
-        />
-      </div>
+    <div>
+      <form onSubmit={handleSubmit(handleForm)}>
+        <div>
+          <TextField
+            autoFocus
+            size="small"
+            id="outlined-required"
+            label="Usuário: "
+            name="user"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.user}
+            helperText={errors.user?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Nome Completo: "
+            name="name"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.name}
+            helperText={errors.name?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Email: "
+            name="email"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.email}
+            helperText={errors.email?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Senha: "
+            name="password"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.password}
+            helperText={errors.password?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Confirmar Senha: "
+            name="password_confirmation"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.password_confirmation}
+            helperText={errors.password_confirmation?.message}
+          />
+        </div>
 
-      <Button type="submit" variant="contained" color="primary">
-        Cadastrar
+        <Button type="submit" variant="contained" color="primary">
+          Cadastrar
+        </Button>
+      </form>
+      <br />
+      <Button
+        onClick={() => history.push("/")}
+        variant="contained"
+        color="primary"
+      >
+        logar
       </Button>
-    </form>
+    </div>
   );
 };
 

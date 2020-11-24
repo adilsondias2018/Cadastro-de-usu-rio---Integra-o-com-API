@@ -48,40 +48,50 @@ const Login = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleLogin)}>
-      <div>
-        <TextField
-          autoFocus
-          size="small"
-          id="outlined-required"
-          label="Usuário: "
-          name="user"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.user}
-          helperText={errors.user?.message}
-        />
-      </div>
+    <div>
+      <form onSubmit={handleSubmit(handleLogin)}>
+        <div>
+          <TextField
+            autoFocus
+            size="small"
+            id="outlined-required"
+            label="Usuário: "
+            name="user"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.user}
+            helperText={errors.user?.message}
+          />
+        </div>
 
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Senha: "
-          name="password"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.password}
-          helperText={errors.password?.message}
-        />
-      </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Senha: "
+            name="password"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.password}
+            helperText={errors.password?.message}
+          />
+        </div>
 
-      <Button type="submit" variant="contained" color="primary">
-        logar
+        <Button type="submit" variant="contained" color="primary">
+          logar
+        </Button>
+      </form>
+      <br />
+      <Button
+        onClick={() => history.push("/user-form")}
+        variant="contained"
+        color="primary"
+      >
+        cadastrar
       </Button>
-    </form>
+    </div>
   );
 };
 
