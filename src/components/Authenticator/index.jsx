@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import Login from "../Login";
+import Users from "../../pages/users";
+import Feedbacks from "../../pages/feedbacks";
 import UserForm from "../user-form";
 import RestrictArea from "../RestrictArea";
 import Axios from "axios";
@@ -47,6 +49,12 @@ const Authenticator = () => {
       </Route>
       <Route exact path="/user-form">
         <UserForm />
+      </Route>
+      <Route exact path="/users">
+        <Users />
+      </Route>
+      <Route exact path="/feedbacks">
+        <Feedbacks />
       </Route>
       <Route path="/">
         <Login setAuthentication={setAuthentication}></Login>

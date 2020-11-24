@@ -32,7 +32,6 @@ const Login = (props) => {
   const handleLogin = (data) => {
     console.log(data);
     axios
-      // ...data
       .post("https://ka-users-api.herokuapp.com/authenticate", { ...data })
       .then((response) => {
         console.log(response);
