@@ -23,10 +23,13 @@ const UserForm = () => {
   const handleForm = (data) => {
     console.log(data);
     axios
-      .post(`https://ka-users-api.herokuapp.com/users/${userID}/feedbacks`, {
-        headers: { Authorization: token },
-        body: { feedback: data },
-      })
+      .post(
+        `https://ka-users-api.herokuapp.com/users/${userID}/feedbacks`,
+        { feedback: data },
+        {
+          headers: { Authorization: token },
+        }
+      )
       .then((response) => {
         console.log(response);
         response.request.status === 201 && history.push("/feedbacks");
