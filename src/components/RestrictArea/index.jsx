@@ -34,6 +34,13 @@ const RestrictArea = () => {
               history.push("/newfeedback");
             }}
           />
+          <Tab
+            value={3}
+            label="Logout"
+            onClick={() => {
+              history.push("/logout");
+            }}
+          />
         </Tabs>
       </AppBar>
     </div>

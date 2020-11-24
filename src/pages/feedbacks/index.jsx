@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 import axios from "axios";
+import RestrictArea from "../../components/RestrictArea";
+
 const Feedbacks = () => {
   const token = window.localStorage.getItem("authToken");
   const userID = window.localStorage.getItem("user_id");
@@ -30,6 +32,8 @@ const Feedbacks = () => {
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>
+      <RestrictArea />
+
       <DataGrid
         rows={rows}
         columns={[

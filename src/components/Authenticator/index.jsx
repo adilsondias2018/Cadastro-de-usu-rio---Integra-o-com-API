@@ -5,6 +5,7 @@ import Login from "../Login";
 import Users from "../../pages/users";
 import Feedbacks from "../../pages/feedbacks";
 import NewFeedback from "../../pages/newfeedback";
+import Logout from "../../pages/logout";
 import UserForm from "../user-form";
 import RestrictArea from "../RestrictArea";
 import Axios from "axios";
@@ -59,6 +60,9 @@ const Authenticator = () => {
       </Route>
       <Route exact path="/newfeedback">
         <NewFeedback />
+      </Route>
+      <Route exact path="/logout">
+        <Logout />
       </Route>
       <Route path="/">
         <Login setAuthentication={setAuthentication}></Login>

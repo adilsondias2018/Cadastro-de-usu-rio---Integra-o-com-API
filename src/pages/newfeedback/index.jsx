@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
+import RestrictArea from "../../components/RestrictArea";
 
 import { TextField, Button } from "@material-ui/core/";
 const UserForm = () => {
@@ -37,52 +38,56 @@ const UserForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleForm)}>
-      <div>
-        <TextField
-          autoFocus
-          size="small"
-          id="outlined-required"
-          label="Nome: "
-          name="name"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.name}
-          helperText={errors.name?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Comentário: "
-          name="comment"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.comment}
-          helperText={errors.comment?.message}
-        />
-      </div>
-      <div>
-        <TextField
-          size="small"
-          id="outlined-required"
-          label="Nota: "
-          name="grade"
-          variant="outlined"
-          margin="normal"
-          inputRef={register}
-          error={!!errors.grade}
-          helperText={errors.grade?.message}
-        />
-      </div>
+    <div>
+      <RestrictArea />
 
-      <Button type="submit" variant="contained" color="primary">
-        Enviar
-      </Button>
-    </form>
+      <form onSubmit={handleSubmit(handleForm)}>
+        <div>
+          <TextField
+            autoFocus
+            size="small"
+            id="outlined-required"
+            label="Nome: "
+            name="name"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.name}
+            helperText={errors.name?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Comentário: "
+            name="comment"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.comment}
+            helperText={errors.comment?.message}
+          />
+        </div>
+        <div>
+          <TextField
+            size="small"
+            id="outlined-required"
+            label="Nota: "
+            name="grade"
+            variant="outlined"
+            margin="normal"
+            inputRef={register}
+            error={!!errors.grade}
+            helperText={errors.grade?.message}
+          />
+        </div>
+
+        <Button type="submit" variant="contained" color="primary">
+          Enviar
+        </Button>
+      </form>
+    </div>
   );
 };
 
